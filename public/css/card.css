@@ -1,0 +1,103 @@
+
+:root {
+    --primary-color: #ff5733; /* Color vibrante (ej. Naranja-Rojo) */
+    --primary-hover: #e04a29;
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --secondary-color: #3f3f3f; /* Texto oscuro */
+    --bg-light: #f8f9fa; /* Fondo muy ligero */
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+}
+
+.results-header {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.toy-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.toy-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto 3D al pasar el mouse */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor para asegurar que todas las imágenes tengan el mismo alto */
+.card-img-wrapper {
+    width: 100%;
+    /* Mantenemos una relación de aspecto consistente (ej. cuadrado) */
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+    position: relative;
+    background-color: #f1f1f1; /* Fondo claro si la imagen tarda en cargar */
+}
+
+.card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    transition: transform 0.5s ease;
+}
+
+.toy-card:hover .card-img-top {
+    transform: scale(1.05); /* Zoom ligero al pasar el mouse */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.toy-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.send-mail-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.send-mail-btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+
+@media (max-width: 767px) {
+    .results-header {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    .toy-card {
+        margin-bottom: 20px;
+    }
+}

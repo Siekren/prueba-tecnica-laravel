@@ -1,0 +1,91 @@
+------------------------------------------------------------------------ */
+
+:root {
+    --primary-color: #007bff; /* Azul fuerte para el botón */
+    --secondary-color: #f3f3f3; /* Fondo claro */
+    --accent-color: #ff9900; /* Naranja amigable para el acento */
+    --form-bg: #ffffff; /* Fondo del formulario */
+    --text-color: #333;
+    --border-radius: 8px;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centrado vertical en toda la página */
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+}
+
+form {
+    background-color: var(--form-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    border-top: 5px solid var(--accent-color); /* Toque de acento amigable */
+}
+
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Aplica el estilo a los inputs y al select */
+.form-control,
+select.form-control,
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px; /* Ajusta el margen superior de tu HTML */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que padding no afecte el width total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+select.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+
+form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px; /* Espacio extra antes del botón */
+    font-size: 1.1em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Tono más oscuro al pasar el mouse */
+    box-shadow: var(--shadow-light);
+}
+
+.form-group br,
+form > br {
+    display: none; 
+}
+.mt-3 {
+    margin-top: 0 !important; /* Reseteamos los mt-3 de tu HTML */
+}
