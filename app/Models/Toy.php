@@ -4,21 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB; // Usaremos DB Query Builder para la consulta compleja
+use App\Models\KidGenre;
 
 class Toy extends Model
 {
-    // Opcional: Define la tabla si no sigue la convención de nomenclatura (plural de Toy)
-    // protected $table = 'toys';
 
-    /**
-     * Obtiene los juguetes según el nombre del niño y el ID de género.
-     * La consulta original parece tener un error en la cláusula WHERE y los parámetros.
-     * Se asume que se buscaba el nombre del niño ('name') y el ID del género del niño ('id_kidgenre').
-     *
-     * @param string|null $name Nombre del niño (que está en la tabla `kid`).
-     * @param int|null $genreId ID del género (que está en la tabla `kid_genre`).
-     * @return \Illuminate\Support\Collection
-     */
+    public function genre()
+    {
+        // belongsTo(Modelo_Padre::class, 'llave_foranea_en_tabla_actual', 'llave_primaria_en_tabla_padre')
+        return $this->belongsTo(KidGenre::class, 'id_toy_genre', 'idkid_genre');
+    }
     public function getToys($name, $genreId)
     {
         // Versión Laravel Query Builder

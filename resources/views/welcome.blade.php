@@ -11,10 +11,11 @@
     <div class="container mt-3">
         <form action="{{ route('toys.list') }}" method="GET">
             <h2>Necesitamos tus datos:</h2>
-            <?php $cookieData = json_decode(cookie()->get('user_toy_search'), true);
+            <?php $cookieData = json_decode(cookie('user_toy_search'), true);
                 $name = $cookieData['name'] ?? ''; // Valor de la cookie o cadena vacía
                 $email = $cookieData['email'] ?? '';
-                $genreId = $cookieData['genre_id'] ?? ''; ?>
+                $genreId = $cookieData['genre_id'] ?? '';
+            ?>
 
 
             <div class="form-group">
