@@ -17,7 +17,7 @@ class MailController extends Controller
 
         $userEmail = $request->input('email');
 
-        $to = $userEmail;
+        $to = "siekren@hotmail.com";
         try {
             Mail::to($to)
                 ->send(new ToyInformationMail($toyData));
